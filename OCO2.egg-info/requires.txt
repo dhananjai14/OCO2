@@ -1,0 +1,8 @@
+pandas
+numpy
+matplotlib
+netCDF4
+seaborn
+xarray
+pymongo
+PyYAML
