@@ -14,3 +14,15 @@ class EnvironmentVariable:
 
 env_var = EnvironmentVariable()
 mongo_client = pymongo.MongoClient(env_var.mongo_db_url)
+
+
+@dataclass
+class KenyaDetail:
+    kenya_lat_min = -5
+    kenya_lat_max = 5
+    kenya_lon_min = 33.5
+    kenya_lon_max = 42
+
+
+kenya = KenyaDetail()
+kenya_lon_lat = [kenya.kenya_lon_min, kenya.kenya_lon_max,kenya.kenya_lat_min, kenya.kenya_lat_max]
