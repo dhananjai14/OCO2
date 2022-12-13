@@ -5,6 +5,7 @@ REQUIREMENT_FILE_NAME = "requirements.txt"
 HYPHEN_E_DOT = "-e ."
 
 
+# List[str] is just to tell the user that this particular function will return the list of strings
 def get_requirements() -> List[str]:
     with open(REQUIREMENT_FILE_NAME) as requirement_file:
         requirement_list = requirement_file.readlines()
