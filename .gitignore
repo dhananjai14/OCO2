@@ -1,3 +1,5 @@
 .env
 /Raw_data
 /Raw_data_to_csv_data
+/logs
+/artifact
