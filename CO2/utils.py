@@ -47,7 +47,7 @@ def convert_cdf4_to_csv(complete_folder_path: str):
                 XCO2PREC_values_for_df = XCO2PREC_values.flatten()
             except:
                 XCO2PREC_values_for_df = np.NaN
-            logging.info('CO2_precision values exctracted')
+            logging.info('CO2_precision values extracted')
 
             format = '%Y-%m-%d'
             month_year = datetime.strptime(data0.RangeBeginningDate, format)
