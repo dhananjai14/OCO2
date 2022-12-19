@@ -67,15 +67,26 @@ def convert_cdf4_to_csv(complete_folder_path: str):
 
             df = pd.concat([df, XCO2_df])
             df.reset_index(drop= True, inplace =True)
-            logging.info(f'=======>Processing of File : {file} finished')
+            logging.info(f'=======>Processing of File: {file} finished')
 
         cwd = os.getcwd()
         raw_data_path = os.path.join(cwd, 'Raw_data_to_csv_data')
         os.makedirs(raw_data_path, exist_ok=True)
         df.to_csv(rf'{raw_data_path}\XCO2_kenya.csv', index=False)
-        logging.info(f'''XCO2_kenya.csv file created''')
+        logging.info('''XCO2_kenya.csv file created''')
         return df
+
     except Exception as e:
         raise CO2_Exception(e, sys)
 
+
+def write_ymal_file(file_path, data:dict):
+    try:
+        file_dir = os.path.dirname(file_path)
+        os.makedirs(file_dir, exist_ok=True)
+        with open(file_path,'w') as file_writer:
+            yaml.dump(data, file_writer)
+
+    except Exception as e:
+        raise CO2_Exception(e, sys)
 
